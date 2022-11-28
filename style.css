@@ -1,0 +1,859 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    /*
+        Blue: hsl(207, 90%, 61%)
+        Purple: hsl(250, 66%, 75%)
+        Pink: hsl(356, 66%, 75%)
+        Teal: hsl(174, 63%, 62%)
+    */
+  
+    --hue: 4 ;
+    --sat: 90%;
+    --lig: 45%;
+    --first-color: hsl(var(--hue), var(--sat), var(--lig));
+    --first-color-alt: hsl(var(--hue), var(--sat), 57%); /* -4% */
+    --title-color: #fff;
+    --text-color: rgba(255, 255, 255, 0.9);
+    --text-color-light: hsl(var(--hue), 8%, 75%);
+    --text-color-lighten:  rgba(255, 255, 255, .075);;
+    --text-color-lighten:  rgba(255, 255, 255, .075);;
+    --body-color: #fff !important;
+    --container-color: #fff;
+  
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: 'Quicksand', sans-serif;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+  }
+  
+  @media screen and (min-width: 968px) {
+    :root {
+      --h2-font-size: 1.5rem;
+      --h3-font-size: 1.25rem;
+      --normal-font-size: 1rem;
+      --small-font-size: .875rem;
+      --smaller-font-size: .813rem;
+    }
+  }
+  
+  /*=============== BASE ===============*/
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-align: -webkit-center;
+  }
+  
+  p{
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+
+  body {
+    
+    font-family: 'Quicksand', sans-serif !important;
+    font-size: var(--normal-font-size);
+    background-image: url(./Images/bcgImage-2.jpg);
+    background-size: cover;
+    box-sizing: inherit;
+    text-decoration: inherit;
+    vertical-align: inherit;
+    color: var(--text-color);
+    transition: .3s;
+  }
+  
+  h1, h2, h3 {
+    color: var(--title-color);
+    font-weight: 600;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .container {
+    max-width: 550px !important; 
+    margin-left: 2rem !important;
+    margin-right: 2rem !important;
+  }
+  
+  .grid {
+    display: grid !important;
+    gap: 1.5rem !important;
+  }
+  
+  
+  /*=============== THEME ===============*/
+  
+  .change-theme{
+    position: absolute;
+    top: 1.5rem;
+    right: 0;
+    font-size: 1.5rem;
+    color: var(--title-color);
+    cursor: pointer;
+    transition: .3s;
+  }
+  
+  .change-theme:hover{
+    color: var(--first-color);
+  }
+
+  /*========== Variables Dark theme ==========*/
+
+  body .dark-theme {
+    --title-color: #fff;
+    --text-color: rgba(255, 255, 255, 0.5);
+    --body-color: #000 !important;
+    --container-color:  rgba(255, 255, 255, 0.1);
+  }
+
+  .dark-theme .link__instagram-kisisel{
+    background-color: var(--container-color);
+  }
+  
+  .dark-theme .link__instagram-kisisel:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .dark-theme .link__discord-sunucu{
+    background-color: var(--container-color);
+  }
+  
+  .dark-theme .link__discord-sunucu:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .dark-theme .github{
+    color: #e3e5e6;
+  }
+  
+  .dark-theme .github:hover{
+    color: #b8b9ba;
+  }
+  
+  .dark-theme .filters__content{
+    background-color: var(--container-color);
+  }
+  
+  .dark-theme::-webkit-scrollbar{
+    background-color: #0f0f0f;;
+  }
+  
+  .dark-theme::-webkit-scrollbar-thumb{
+    background-color: #aaa;
+  }
+  
+  .dark-theme::-webkit-scrollbar-thumb:hover{
+    background-color: #8c8b8b;
+  }
+  
+  
+  
+  /*=============== PROFILE ===============*/
+  
+  .profile{
+    position: relative;
+    padding-top: 3.5rem;
+  }
+  
+  .profile__container{
+    row-gap: 2rem;
+  }
+  
+  .profile__data{
+    display: grid;
+    text-align: center;
+  }
+  
+  .profile__perfil{
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(180deg, hsla(var(--hue), var(--sat), var(--lig), 1) 0%,
+    hsla(var(--hue), var(--sat), var(--lig), .2) 100%);
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  
+  .profile__border{
+    border: 3.5px solid var(--first-color);
+    justify-self: center;
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin-bottom: .75rem;
+  }
+  
+  .profile__name{
+    font-size: var(--h2-font-size);
+  }
+  
+  .profile__profession{
+    font-size: var(--smaller-font-size);
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+  }
+  
+  /*=============== LINK ===============*/
+
+  .link__instagram-2{
+    position: relative;
+  }
+
+  .link__instagram-business{
+    z-index: 0;
+    overflow: hidden;
+    margin: 16px;
+    border: none;
+    background: #e8eaeb;
+    border-radius: 30px;
+    transition: transform 0.15s cubic-bezier(0, 0.2, 0.5, 3) .3s;
+    transition: .3s;
+  }
+
+  .link__instagram-business:hover{
+    background-color: #d9d9d9;
+  }
+
+  .link__instagram-2-link{
+    overflow-wrap: break-word;
+    padding-left: 66px;
+    padding-right: 66px;
+    margin: 0;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    background: none;
+    text-decoration: none;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: auto;
+    position: relative;
+    padding: 1.15rem;
+    width: 100%;
+    appearance: none;
+    box-sizing: border-box;
+    vertical-align: middle;
+  }
+
+  .link__instagram-business-image{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    overflow: hidden;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 50%;
+    left: 4px;
+    width: 46px;
+    height: 46px;
+  }
+
+  .image{
+    display: flex;
+  }
+
+  .link__instagram-business-name{
+    position: relative;
+    hyphens: none;
+    padding: 0px;
+    margin: 0px;
+    line-height: 1.5;
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    color: #F6801A !important;
+    transition: .3s;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .link__linkedin-1{
+    position: relative;
+  }
+
+  .link__linkedin-kişisel{
+    z-index: 0;
+    overflow: hidden;
+    margin: 16px;
+    border: none;
+    background: #e8eaeb;
+    border-radius: 30px;
+    transition: transform 0.15s cubic-bezier(0, 0.2, 0.5, 3) .3s;
+    transition: .3s;
+  }
+
+  .link__linkedin-kişisel:hover{
+    background-color: #d9d9d9;
+  }
+
+  .link__linkedin-1-link{
+    overflow-wrap: break-word;
+    padding-left: 66px;
+    padding-right: 66px;
+    margin: 0;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    background: none;
+    text-decoration: none;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: auto;
+    position: relative;
+    padding: 1.15rem;
+    width: 100%;
+    appearance: none;
+    box-sizing: border-box;
+    vertical-align: middle;
+  }
+  
+  .link__linkedin-image{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    overflow: hidden;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 50%;
+    left: 4px;
+    width: 46px;
+    height: 46px;
+  }
+
+  .link__linkedin-name{
+    position: relative;
+    hyphens: none;
+    padding: 0px;
+    margin: 0px;
+    line-height: 1.5;
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    color: #266CBA !important;
+    transition: .3s;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .link__mail-1{
+    position: relative;
+  }
+
+  .link__mail-kişisel{
+    z-index: 0;
+    overflow: hidden;
+    margin: 16px;
+    border: none;
+    background: #e8eaeb;
+    border-radius: 30px;
+    transition: transform 0.15s cubic-bezier(0, 0.2, 0.5, 3) .3s;
+    transition: .3s;
+  }
+
+  .link__mail-kişisel:hover{
+    background-color: #d9d9d9;
+  }
+
+  .link__mail-1-link{
+    overflow-wrap: break-word;
+    padding-left: 66px;
+    padding-right: 66px;
+    margin: 0;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    background: none;
+    text-decoration: none;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: auto;
+    position: relative;
+    padding: 1.15rem;
+    width: 100%;
+    appearance: none;
+    box-sizing: border-box;
+    vertical-align: middle;
+  }
+  
+  .link__mail-image{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    overflow: hidden;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 50%;
+    left: 4px;
+    width: 46px;
+    height: 46px;
+  }
+
+  .link__mail-name{
+    position: relative;
+    hyphens: none;
+    padding: 0px;
+    margin: 0px;
+    line-height: 1.5;
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    color: #0052CD !important;
+    transition: .3s;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .link__github-1{
+    position: relative;
+  }
+
+  .link__github-kişisel{
+    z-index: 0;
+    overflow: hidden;
+    margin: 16px;
+    border: none;
+    background: #e8eaeb;
+    border-radius: 30px;
+    transition: transform 0.15s cubic-bezier(0, 0.2, 0.5, 3) .3s;
+    transition: .3s;
+  }
+
+  .link__github-kişisel:hover{
+    background-color: #d9d9d9;
+  }
+
+  .link__github-1-link{
+    overflow-wrap: break-word;
+    padding-left: 66px;
+    padding-right: 66px;
+    margin: 0;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    background: none;
+    text-decoration: none;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: auto;
+    position: relative;
+    padding: 1.15rem;
+    width: 100%;
+    appearance: none;
+    box-sizing: border-box;
+    vertical-align: middle;
+  }
+  
+  .link__github-image{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    overflow: hidden;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 50%;
+    left: 4px;
+    width: 46px;
+    height: 46px;
+  }
+
+  .link__github-name{
+    position: relative;
+    hyphens: none;
+    padding: 0px;
+    margin: 0px;
+    line-height: 1.5;
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    color: #232323 !important;
+    transition: .3s;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .link__instagram-1{
+    position: relative;
+  }
+
+  .link__instagram-kisisel{
+    z-index: 0;
+    overflow: hidden;
+    margin: 16px;
+    border: none;
+    background: #e8eaeb;
+    border-radius: 30px;
+    transition: transform 0.15s cubic-bezier(0, 0.2, 0.5, 3) .3s;
+    transition: .3s;
+  }
+
+  .link__instagram-kisisel:hover{
+    background-color: #d9d9d9;
+  }
+
+  .link__instagram-1-link{
+    overflow-wrap: break-word;
+    padding-left: 66px;
+    padding-right: 66px;
+    margin: 0;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    background: none;
+    text-decoration: none;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: auto;
+    position: relative;
+    padding: 1.15rem;
+    width: 100%;
+    appearance: none;
+    box-sizing: border-box;
+    vertical-align: middle;
+  }
+  
+  .link__instagram-image{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    overflow: hidden;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 50%;
+    left: 4px;
+    width: 46px;
+    height: 46px;
+  }
+
+  .link__instagram-name{
+    position: relative;
+    hyphens: none;
+    padding: 0px;
+    margin: 0px;
+    line-height: 1.5;
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    color: #8B3ADC !important;
+    transition: .3s;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .link__spotify-1{
+    position: relative;
+  }
+
+  .link__spotify-kisisel{
+    z-index: 0;
+    overflow: hidden;
+    margin: 16px;
+    border: none;
+    background: #e8eaeb;
+    border-radius: 30px;
+    transition: transform 0.15s cubic-bezier(0, 0.2, 0.5, 3) .3s;
+    transition: .3s;
+  }
+
+  .link__spotify-kisisel:hover{
+    background-color: #d9d9d9;
+  }
+
+  .link__spotify-1-link{
+    overflow-wrap: break-word;
+    padding-left: 66px;
+    padding-right: 66px;
+    margin: 0;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    background: none;
+    text-decoration: none;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: auto;
+    position: relative;
+    padding: 1.15rem;
+    width: 100%;
+    appearance: none;
+    box-sizing: border-box;
+    vertical-align: middle;
+  }
+  
+  .link__spotify-image{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    overflow: hidden;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 50%;
+    left: 4px;
+    width: 46px;
+    height: 46px;
+  }
+
+  .link__spotify-name{
+    position: relative;
+    hyphens: none;
+    padding: 0px;
+    margin: 0px;
+    line-height: 1.5;
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    color: #2fff05 !important;
+    transition: .3s;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  
+  .link__youtube-1{
+    position: relative;
+  }
+
+  .link__youtube-business{
+    z-index: 0;
+    overflow: hidden;
+    margin: 16px;
+    border: none;
+    background: #e8eaeb;
+    border-radius: 30px;
+    transition: transform 0.15s cubic-bezier(0, 0.2, 0.5, 3) .3s;
+    transition: .3s;
+  }
+
+  .link__youtube-business:hover{
+    background-color: #d9d9d9;
+  }
+
+  .link__youtube-1-link{
+    overflow-wrap: break-word;
+    padding-left: 66px;
+    padding-right: 66px;
+    margin: 0;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    background: none;
+    text-decoration: none;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: auto;
+    position: relative;
+    padding: 1.15rem;
+    width: 100%;
+    appearance: none;
+    box-sizing: border-box;
+    vertical-align: middle;
+  }
+
+  
+  
+  .link__youtube-image{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    overflow: hidden;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 50%;
+    left: 4px;
+    width: 46px;
+    height: 46px;
+  }
+
+  .link__youtube-name{
+    position: relative;
+    hyphens: none;
+    padding: 0px;
+    margin: 0px;
+    line-height: 1.5;
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    color: #ff0000 !important;
+    transition: .3s;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .link__discord-1{
+    position: relative;
+  }
+
+  .link__discord-sunucu{
+    z-index: 0;
+    overflow: hidden;
+    margin: 16px;
+    border: none;
+    background: #e8eaeb;
+    border-radius: 30px;
+    transition: transform 0.15s cubic-bezier(0, 0.2, 0.5, 3) .3s;
+    transition: .3s;
+  }
+
+  .link__discord-sunucu:hover{
+    background-color: #d9d9d9;
+  }
+
+  .link__discord-1-link{
+    overflow-wrap: break-word;
+    padding-left: 66px;
+    padding-right: 66px;
+    margin: 0;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    background: none;
+    text-decoration: none;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: auto;
+    position: relative;
+    padding: 1.15rem;
+    width: 100%;
+    appearance: none;
+    box-sizing: border-box;
+    vertical-align: middle;
+  }
+  
+  .link__discord-image{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    overflow: hidden;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 50%;
+    left: 4px;
+    width: 46px;
+    height: 46px;
+  }
+
+  .link__discord-name{
+    position: relative;
+    hyphens: none;
+    padding: 0px;
+    margin: 0px;
+    line-height: 1.5;
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    color: #175DC6 !important;
+    transition: .3s;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .footer__copy{
+    display: block;
+    margin: 2.5rem 0 2rem;
+    text-align: center;
+    font-size: var(--smaller-font-size);
+    color: var(--text-color);
+    font-weight: 700;
+  }
+
+  .business{
+    margin-top: 40px;
+  }
+
+  ::-webkit-scrollbar{
+    width: .6rem;
+    background-color: #f0f0f0;
+  }
+  
+  ::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: #d6d6d6;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover{
+    background-color: #b3b3b3;
+  }
+
+  @media screen and (min-width: 601px) {
+    div.example {
+      font-size: 18px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    div.example {
+      font-size: 16px;
+    }
+  }
