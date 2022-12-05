@@ -1,3 +1,3 @@
-# Public Link Page
+# A customizable personal link page with dark theme written using HTML, CSS and JS
 
-https://i.imgur.com/YkLNOjp.png
+<img src="https://i.imgur.com/YkLNOjp.png"></img>
